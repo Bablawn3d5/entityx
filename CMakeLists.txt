@@ -17,6 +17,10 @@ endif()
 include_directories(${CMAKE_CURRENT_LIST_DIR})
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+<<<<<<< HEAD
+=======
+set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "CMake")
+>>>>>>> 08050c9... Organize CMake generated projects into solution folders.
 
 set(ENTITYX_BUILD_TESTING true CACHE BOOL "Enable building of tests.")
 set(ENTITYX_RUN_BENCHMARKS false CACHE BOOL "Run benchmarks (in conjunction with -DENTITYX_BUILD_TESTING=1).")
