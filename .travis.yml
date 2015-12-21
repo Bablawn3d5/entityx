@@ -1,6 +1,6 @@
 language: cpp
 compiler:
-  - clang
+  - clang-3.5
   - gcc
 before_install:
   - sudo apt-add-repository -y ppa:jkeiren/ppa
