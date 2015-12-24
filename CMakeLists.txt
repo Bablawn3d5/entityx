@@ -17,10 +17,7 @@ endif()
 include_directories(${CMAKE_CURRENT_LIST_DIR})
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-<<<<<<< HEAD
-=======
 set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "CMake")
->>>>>>> 08050c9... Organize CMake generated projects into solution folders.
 
 set(ENTITYX_BUILD_TESTING true CACHE BOOL "Enable building of tests.")
 set(ENTITYX_RUN_BENCHMARKS false CACHE BOOL "Run benchmarks (in conjunction with -DENTITYX_BUILD_TESTING=1).")
@@ -37,6 +34,9 @@ cmake_policy(SET CMP0054 NEW)
 # Default compiler args
 if (CMAKE_CXX_COMPILER_ID MATCHES "(GNU|.*Clang)")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic -Werror -Wall -Wextra -Wno-unused-parameter -Wno-error=unused-variable -Wno-error=sign-compare")
+    if (CMAKE_CXX_COMPILER_ID MATCHES "(.*Clang)")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Qunused-arguments")
+    endif()
     set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g")
     set(CMAKE_CXX_FLAGS_MINSIZEREL "-g -Os -DNDEBUG")
     set(CMAKE_CXX_FLAGS_RELEASE "-g -O2 -DNDEBUG")
