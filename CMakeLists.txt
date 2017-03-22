@@ -64,7 +64,7 @@ set(libdir ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR})
 
 set(OLD_CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 if ((MAKE_CXX_COMPILER_ID STREQUAL "GNU") OR (CMAKE_CXX_COMPILER_ID STREQUAL "Clang"))
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 endif()
 check_cxx_source_compiles(
 "
@@ -81,7 +81,7 @@ if (NOT ENTITYX_HAVE_CXX11_STDLIB)
     message(STATUS "-- Not using -stdlib=libc++ (test failed to build)")
     set(CMAKE_CXX_FLAGS "${OLD_CMAKE_CXX_FLAGS}")
 else ()
-    message(STATUS "-- Using -stdlib=libc++")
+    message("-- Using -std=c++11")
 endif ()
 
 
